@@ -1,9 +1,12 @@
 from fastapi import FastAPI, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+from fastapi import FastAPI
+
 
 app = FastAPI(title="Farsin OS Marketing Backend V2.1")
 
@@ -50,7 +53,6 @@ def send_email(to_email: str, subject: str, html_content: str):
         return False
 
 def notify_admin_of_new_lead(lead: LeadRequest):
-    """অ্যাডমিন নোটিফিকেশন - ক্লিনার টেমপ্লেট ফর CEO ফারসিন"""
     subject = f"🚨 NEW LEAD: {lead.company} | Workflow: {lead.workflow}"
     
     html_content = f"""
@@ -114,6 +116,10 @@ def send_client_auto_reply(lead: LeadRequest):
     send_email(lead.email, subject, html_content)
 
 # --- API ENDPOINTS ---
+@app.get("/", response_class=HTMLResponse)
+async def serve_home():
+    with open("index.html", "r", encoding="utf-8") as file:
+        return file.read()
 
 @app.post("/api/submit-lead")
 async def submit_lead(lead: LeadRequest, background_tasks: BackgroundTasks):
