@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farsin OS | Centralized Agency Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#06b6d4',
+                        dark: '#0a0f1c',
+                        card: '#111827',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0f1c; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+        .animate-fade-in { animation: fadeIn 0.5s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body id="top" class="bg-dark text-slate-200 font-sans antialiased">
+
+    <div class="bg-emerald-900/30 border-b border-emerald-500/20 py-2 text-center text-xs md:text-sm font-semibold text-emerald-400 tracking-wide">
+        <i class="fa-solid fa-users mr-2"></i> Join 5+ Forward-Thinking Agencies in our Exclusive Pilot Program.
+    </div>
+
+    <nav class="border-b border-slate-800 bg-dark/80 backdrop-blur-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#top" class="flex items-center text-3xl font-extrabold text-white tracking-tight transition-transform duration-300 hover:scale-105">
+                <i class="fa-solid fa-bolt text-cyan-400 mr-2 text-2xl"></i>
+                Farsin <span class="ml-1 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">OS</span>
+            </a>
+            <a href="#booking" class="hidden md:inline-block bg-primary hover:bg-cyan-400 text-dark font-extrabold px-6 py-2.5 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(6,182,212,0.6)]">Get 7-Day Free Pilot</a>
+        </div>
+    </nav>
+
+    <a href="#booking" class="md:hidden fixed bottom-6 right-6 z-50 bg-primary text-dark w-14 h-14 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(6,182,212,0.6)] hover:-translate-y-1 hover:scale-110 transition-all duration-300">
+        <i class="fa-solid fa-rocket text-xl font-bold"></i>
+    </a>
+
+    <header class="max-w-5xl mx-auto px-6 py-20 text-center">
+        <div class="text-center mb-8">
+            <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight">
+                <i class="fa-solid fa-bolt text-cyan-400 mr-2"></i>Farsin <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">OS</span>
+            </h1>
+            <p class="text-xs text-gray-400 uppercase tracking-[0.3em] mt-3 font-semibold">Centralized Agency Intelligence</p>
+        </div>
+        <h2 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight tracking-tight mt-10">
+            We Automate Your <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-emerald-400 to-indigo-400">Repetitive Workflows.</span>
+        </h2>
+        <p class="text-xl text-slate-400 mb-10 max-w-2xl mx-auto font-medium">
+            No complex software to learn. Send us your messy data, emails, and PDFs. Our AI processes it, and we deliver perfect results. <span class="text-white font-bold">Done for you.</span>
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+            <a href="#booking" class="w-full sm:w-auto bg-white text-dark hover:bg-slate-200 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl">
+                Claim Free Pilot <i class="fa-solid fa-arrow-right ml-2"></i>
+            </a>
+            <a href="#workflows" class="text-slate-400 hover:text-white font-semibold transition hover:scale-105 transform inline-block">
+                See How It Works <i class="fa-solid fa-play ml-1 text-sm"></i>
+            </a>
+        </div>
+    </header>
+
+    <section class="border-y border-slate-800 bg-slate-900/30 py-8">
+        <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-center gap-8 md:gap-16 text-center">
+            <div class="flex items-center space-x-3 text-slate-300">
+                <i class="fa-solid fa-shield-halved text-emerald-400 text-2xl"></i>
+                <span class="font-bold">Studio Pro Security</span>
+            </div>
+            <div class="flex items-center space-x-3 text-slate-300">
+                <i class="fa-solid fa-fire-flame-curved text-orange-400 text-2xl"></i>
+                <span class="font-bold">Zero Server Load</span>
+            </div>
+            <div class="flex items-center space-x-3 text-slate-300">
+                <i class="fa-solid fa-eraser text-red-400 text-2xl"></i>
+                <span class="font-bold">Permanent Data Wipe</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-4xl mx-auto px-6 py-20">
+        <div class="bg-card rounded-3xl p-8 md:p-12 border border-slate-700 shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-cyan-900/10 rounded-full blur-3xl"></div>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-2 text-center relative z-10">The "Cash Burn" Calculator</h2>
+            <p class="text-slate-400 text-center mb-10 relative z-10">Calculate the exact amount your agency loses on manual admin tasks.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
+                <div class="space-y-8">
+                    <div>
+                        <label class="block text-sm font-bold text-slate-300 mb-2">Team Size (Admin tasks): <span id="team-val" class="text-white text-lg font-bold">3</span> people</label>
+                        <input type="range" id="team-size" min="1" max="20" value="3" class="w-full accent-primary cursor-pointer">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-slate-300 mb-2">Hours Wasted Per Person (Weekly): <span id="hours-val" class="text-white text-lg font-bold">15</span> hrs</label>
+                        <input type="range" id="hours-wasted" min="5" max="40" value="15" class="w-full accent-primary cursor-pointer">
+                    </div>
+                </div>
+                <div class="bg-dark rounded-2xl p-6 text-center border border-red-500/30 shadow-inner">
+                    <p class="text-slate-400 font-bold mb-2 uppercase tracking-wider text-xs">Estimated Monthly Loss</p>
+                    <div class="text-5xl font-extrabold text-red-400 mb-4 drop-shadow-[0_0_10px_rgba(248,113,113,0.3)]">$<span id="money-lost">3,600</span></div>
+                    <p class="text-sm text-emerald-400 font-bold bg-emerald-500/10 inline-block px-4 py-2 rounded-lg border border-emerald-500/20">Farsin OS recovers 90% of this cost.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="workflows" class="max-w-7xl mx-auto px-6 py-20">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-extrabold text-white mb-4">Our 5 Core Workflows</h2>
+            <p class="text-slate-400 font-medium">We don't sell apps. We sell time. Here is how our backend engine works.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-card p-8 rounded-2xl border border-slate-700 hover:border-primary transition duration-300 group shadow-lg hover:-translate-y-2">
+                <div class="w-14 h-14 bg-cyan-500/10 text-cyan-400 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-primary group-hover:text-dark transition">
+                    <i class="fa-solid fa-envelope-open-text"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3">Batch Email Drafter</h3>
+                <p class="text-slate-400 mb-6 text-sm line-clamp-2">Say goodbye to inbox anxiety. We draft contextual replies based on your history.</p>
+                <div class="bg-dark rounded-lg p-3 text-xs text-slate-300 font-mono font-semibold flex flex-col space-y-2 border border-slate-800">
+                    <div class="flex items-center"><span class="text-primary mr-2">1.</span> Auto-fetch unread emails</div>
+                    <div class="flex items-center"><span class="text-primary mr-2">2.</span> AI drafts exact replies</div>
+                    <div class="flex items-center"><span class="text-emerald-400 mr-2">3.</span> You review & hit Send</div>
+                </div>
+            </div>
+
+            <div class="bg-card p-8 rounded-2xl border border-slate-700 hover:border-purple-500 transition duration-300 group shadow-lg hover:-translate-y-2">
+                <div class="w-14 h-14 bg-purple-500/10 text-purple-400 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-purple-500 group-hover:text-white transition">
+                    <i class="fa-solid fa-filter"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3">Mass Lead Qualify</h3>
+                <p class="text-slate-400 mb-6 text-sm">Stop chasing dead ends. AI scores leads as Hot/Warm/Cold instantly.</p>
+                <div class="bg-dark rounded-lg p-3 text-xs text-slate-300 font-mono font-semibold flex flex-col space-y-2 border border-slate-800">
+                    <div class="flex items-center"><span class="text-purple-400 mr-2">1.</span> Client fills form</div>
+                    <div class="flex items-center"><span class="text-purple-400 mr-2">2.</span> AI analyzes intent & budget</div>
+                    <div class="flex items-center"><span class="text-emerald-400 mr-2">3.</span> Pushed to CRM with Score</div>
+                </div>
+            </div>
+
+            <div class="bg-card p-8 rounded-2xl border border-slate-700 hover:border-emerald-500 transition duration-300 group shadow-lg hover:-translate-y-2">
+                <div class="w-14 h-14 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-emerald-500 group-hover:text-white transition">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3">Smart FAQ Agent</h3>
+                <p class="text-slate-400 mb-6 text-sm">A smart bot trained exclusively on your company's knowledge base.</p>
+                <div class="bg-dark rounded-lg p-3 text-xs text-slate-300 font-mono font-semibold flex flex-col space-y-2 border border-slate-800">
+                    <div class="flex items-center"><span class="text-emerald-400 mr-2">1.</span> Upload Policy/PDFs</div>
+                    <div class="flex items-center"><span class="text-emerald-400 mr-2">2.</span> Bot learns company rules</div>
+                    <div class="flex items-center"><span class="text-emerald-400 mr-2">3.</span> Auto-answers 80% queries</div>
+                </div>
+            </div>
+
+            <div class="bg-card p-8 rounded-2xl border border-slate-700 hover:border-orange-500 transition duration-300 group shadow-lg hover:-translate-y-2">
+                <div class="w-14 h-14 bg-orange-500/10 text-orange-400 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-orange-500 group-hover:text-white transition">
+                    <i class="fa-solid fa-file-pdf"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3">Deep Report Summary</h3>
+                <p class="text-slate-400 mb-6 text-sm">Turn 50-page boring PDFs into sharp executive summaries instantly.</p>
+                <div class="bg-dark rounded-lg p-3 text-xs text-slate-300 font-mono font-semibold flex flex-col space-y-2 border border-slate-800">
+                    <div class="flex items-center"><span class="text-orange-400 mr-2">1.</span> Drop heavy PDFs</div>
+                    <div class="flex items-center"><span class="text-orange-400 mr-2">2.</span> AI extracts key metrics</div>
+                    <div class="flex items-center"><span class="text-emerald-400 mr-2">3.</span> Get Action Items list</div>
+                </div>
+            </div>
+
+            <div class="bg-card p-8 rounded-2xl border border-slate-700 hover:border-pink-500 transition duration-300 group shadow-lg hover:-translate-y-2">
+                <div class="w-14 h-14 bg-pink-500/10 text-pink-400 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-pink-500 group-hover:text-white transition">
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3">Bulk Data Extractor</h3>
+                <p class="text-slate-400 mb-6 text-sm">Raw invoices go in. Perfectly structured Excel sheets come out.</p>
+                <div class="bg-dark rounded-lg p-3 text-xs text-slate-300 font-mono font-semibold flex flex-col space-y-2 border border-slate-800">
+                    <div class="flex items-center"><span class="text-pink-400 mr-2">1.</span> Upload raw receipts</div>
+                    <div class="flex items-center"><span class="text-pink-400 mr-2">2.</span> Custom JSON parser runs</div>
+                    <div class="flex items-center"><span class="text-emerald-400 mr-2">3.</span> Download clean CSV/Excel</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-4xl mx-auto px-6 py-10">
+        <div class="text-center">
+            <button id="toggle-pricing" class="text-slate-500 hover:text-white text-sm font-bold tracking-widest uppercase transition duration-300 border-b border-dashed border-slate-600 pb-1 focus:outline-none">
+                <i class="fa-solid fa-lock mr-2"></i> View Post-Trial Retainer Plans
+            </button>
+        </div>
+        <div id="pricing-box" class="hidden mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-in">
+            <div class="bg-card p-8 rounded-2xl border border-slate-700">
+                <div class="text-slate-400 font-bold mb-2 uppercase tracking-tighter text-xs">Setup Fee (One-time)</div>
+                <div class="text-3xl font-extrabold text-white mb-4">€100 - €300</div>
+                <ul class="text-sm text-slate-400 space-y-3">
+                    <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Custom Prompt Engineering</li>
+                    <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Workflow Integration</li>
+                    <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Studio Pro Database Setup</li>
+                </ul>
+            </div>
+            <div class="bg-cyan-950/20 p-8 rounded-2xl border border-cyan-500/30">
+                <div class="text-primary font-bold mb-2 uppercase tracking-widest text-xs">Monthly Support</div>
+                <div class="text-3xl font-extrabold text-white mb-4">€50 - €200<span class="text-lg text-slate-400 font-normal">/mo</span></div>
+                <ul class="text-sm text-slate-300 space-y-3">
+                    <li><i class="fa-solid fa-check text-primary mr-2"></i> Daily Data Processing</li>
+                    <li><i class="fa-solid fa-check text-primary mr-2"></i> Model Fine-tuning</li>
+                    <li><i class="fa-solid fa-check text-primary mr-2"></i> Priority Support</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" class="bg-card py-24 border-t border-slate-800 relative">
+        <div class="max-w-3xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-10">
+                <h2 class="text-4xl font-extrabold text-white mb-4 leading-tight">Start Your 7-Day Free Pilot</h2>
+                <p class="text-slate-400 text-lg max-w-xl mx-auto">Tell us what hurts the most. We will analyze your workflow and get back to you.</p>
+            </div>
+
+            <form id="pilot-form" class="bg-dark p-8 md:p-10 rounded-2xl border border-slate-700 shadow-2xl space-y-6 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl"></div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
+                    <div>
+                        <label class="block text-sm font-bold text-slate-300 mb-2">Company Name</label>
+                        <input type="text" id="company" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-slate-300 mb-2">Your Name & Role</label>
+                        <input type="text" id="role" required placeholder="e.g. John, Ops Manager" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition">
+                    </div>
+                </div>
+
+                <div class="relative z-10">
+                    <label class="block text-sm font-bold text-slate-300 mb-2">Work Email</label>
+                    <input type="email" id="email" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition">
+                </div>
+
+                <div class="relative z-10">
+                    <label class="block text-sm font-bold text-slate-300 mb-2">Which workflow do you need right now?</label>
+                    <select id="workflow" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition cursor-pointer">
+                        <option value="All 5 Workflows (Full Enterprise Suite)">🔥 All 5 Workflows (Full Enterprise Suite)</option>
+                        <option value="Inbox Management">Batch Email Drafter</option>
+                        <option value="Lead Qualification">Mass Lead Qualify</option>
+                        <option value="Answering FAQs">Smart FAQ Agent</option>
+                        <option value="Summarizing Reports">Deep Report Summary</option>
+                        <option value="Data Entry">Bulk Data Extractor</option>
+                    </select>
+                </div>
+
+                <div class="relative z-10">
+                    <label class="block text-sm font-bold text-slate-300 mb-2">Describe the manual process you hate doing:</label>
+                    <textarea id="manual_process" rows="3" required placeholder="Tell us how you currently do it, and what needs automating..." class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition"></textarea>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10 border-t border-slate-800 pt-6">
+                    <div>
+                        <label class="block text-sm font-bold text-slate-300 mb-2">How should we chat first?</label>
+                        <select id="chat_platform" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition cursor-pointer" onchange="updatePlaceholder()">
+                            <option value="Email (Classic)">Email (Classic)</option>
+                            <option value="Slack">Slack</option>
+                            <option value="Discord">Discord</option>
+                            <option value="LinkedIn">LinkedIn</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-slate-300 mb-2">Your ID / Invite Link</label>
+                        <input type="text" id="chat_id" required placeholder="Your Email Address" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition">
+                    </div>
+                </div>
+
+                <button type="submit" id="submit-btn" class="relative z-10 w-full bg-primary hover:bg-cyan-500 text-dark font-extrabold text-lg py-4 rounded-xl transition-all duration-300 shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:scale-[1.02] mt-4">
+                    <span>Submit Pilot Request</span> <i class="fa-solid fa-paper-plane ml-2"></i>
+                </button>
+                <div id="status-message" class="hidden text-center font-bold mt-4"></div>
+
+                <div class="mt-8 text-center text-sm text-slate-400 relative z-10 pt-4 border-t border-slate-800">
+                    <p class="mb-3 font-semibold">Need to chat immediately? Reach out to CEO Farsin directly:</p>
+                    <div class="flex justify-center space-x-6">
+                        <a href="https://www.linkedin.com/company/farsin-os/" target="_blank" class="flex items-center text-slate-300 hover:text-primary transition-all hover:scale-110 font-bold">
+                            <i class="fa-brands fa-linkedin text-xl mr-2"></i> LinkedIn
+                        </a>
+                        <a href="mailto:farsinos.official@gmail.com?subject=Inquiry from Farsin OS Marketing Site" class="flex items-center text-slate-300 hover:text-cyan-400 transition-all hover:scale-110 font-bold">
+                            <i class="fa-solid fa-envelope text-xl mr-2"></i> Email
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section class="max-w-4xl mx-auto px-6 py-20 border-t border-slate-800">
+        <h2 class="text-3xl font-bold text-white mb-10 text-center">Frequently Asked Questions</h2>
+        <div class="space-y-4">
+            <div class="bg-card p-6 rounded-xl border border-slate-700 transition hover:border-slate-600">
+                <h4 class="text-lg font-bold text-white mb-2">Is my company data secure?</h4>
+                <p class="text-slate-400 text-sm">Absolutely. We use a proprietary "Nuclear Wipe" system. Once your task is processed and delivered, all raw data is permanently truncated from our operational logs.</p>
+            </div>
+            <div class="bg-card p-6 rounded-xl border border-slate-700 transition hover:border-slate-600">
+                <h4 class="text-lg font-bold text-white mb-2">Do I need to install any software?</h4>
+                <p class="text-slate-400 text-sm">No. This is a "Done-For-You" service. You send us the raw inputs (emails, PDFs, spreadsheets), our backend AI processes it, and we send back the clean results via standard channels.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark border-t border-slate-800 py-12 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <a href="#top" class="flex items-center text-2xl font-extrabold text-slate-500 tracking-tight grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all duration-300">
+                <i class="fa-solid fa-bolt text-cyan-700 mr-2 text-xl"></i>
+                Farsin <span class="ml-1 text-slate-600">OS</span>
+            </a>
+            <div class="text-slate-500 text-sm text-center md:text-left font-medium">
+                <p>Enterprise AI Automation. Built for scaling agencies.</p>
+                <a href="mailto:farsinos.official@gmail.com?subject=Contact via Farsin OS Footer" class="hover:text-cyan-400 transition-all block mt-1"><i class="fa-solid fa-envelope mr-1 text-xs"></i> farsinos.official@gmail.com</a>
+            </div>
+            <div class="flex space-x-4">
+                <a href="https://www.linkedin.com/company/farsin-os/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-card flex items-center justify-center text-slate-400 hover:text-white hover:bg-primary transition-all duration-300 shadow-lg hover:scale-110">
+                    <i class="fa-brands fa-linkedin-in text-lg"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-card flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-700 transition-all duration-300 shadow-lg hover:scale-110">
+                    <i class="fa-brands fa-x-twitter text-lg"></i>
+                </a>
+            </div>
+        </div>
+        <div class="text-center text-slate-600 text-xs mt-10 font-semibold tracking-wide">
+            &copy; 2026 Farsin OS. All rights reserved. Centralized Agency Intelligence.
+        </div>
+    </footer>
+
+    <script>
+        const teamInput = document.getElementById('team-size');
+        const hoursInput = document.getElementById('hours-wasted');
+        const teamVal = document.getElementById('team-val');
+        const hoursVal = document.getElementById('hours-val');
+        const moneyLost = document.getElementById('money-lost');
+        const HOURLY_RATE = 20;
+
+        function calculateROI() {
+            const team = parseInt(teamInput.value);
+            const hours = parseInt(hoursInput.value);
+            teamVal.textContent = team;
+            hoursVal.textContent = hours;
+            const monthlyLoss = team * hours * 4 * HOURLY_RATE;
+            moneyLost.textContent = monthlyLoss.toLocaleString();
+        }
+
+        teamInput.addEventListener('input', calculateROI);
+        hoursInput.addEventListener('input', calculateROI);
+        calculateROI();
+
+        document.getElementById('toggle-pricing').addEventListener('click', function() {
+            const pricingBox = document.getElementById('pricing-box');
+            const icon = this.querySelector('i');
+            if (pricingBox.classList.contains('hidden')) {
+                pricingBox.classList.remove('hidden');
+                icon.classList.remove('fa-lock');
+                icon.classList.add('fa-unlock');
+                this.innerHTML = '<i class="fa-solid fa-unlock mr-2"></i> Hide Post-Trial Plans';
+            } else {
+                pricingBox.classList.add('hidden');
+                icon.classList.remove('fa-unlock');
+                icon.classList.add('fa-lock');
+                this.innerHTML = '<i class="fa-solid fa-lock mr-2"></i> View Post-Trial Retainer Plans';
+            }
+        });
+
+        function updatePlaceholder() {
+            const platform = document.getElementById('chat_platform').value;
+            const input = document.getElementById('chat_id');
+            if(platform === 'Slack') {
+                input.placeholder = "Drop your Slack ID or Workspace Link";
+            } else if(platform === 'Discord') {
+                input.placeholder = "Enter your Discord Username";
+            } else if(platform === 'LinkedIn') {
+                input.placeholder = "Enter your LinkedIn Profile Link";
+            } else {
+                input.placeholder = "Your Email Address";
+            }
+        }
+
+        document.getElementById('pilot-form').addEventListener('submit', async function(e) {
+            e.preventDefault(); 
+            const btn = document.getElementById('submit-btn');
+            const statusMsg = document.getElementById('status-message');
+            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Processing Request...';
+            btn.classList.add('opacity-70', 'cursor-not-allowed');
+            
+            const payload = {
+                company: document.getElementById('company').value,
+                role: document.getElementById('role').value,
+                email: document.getElementById('email').value,
+                workflow: document.getElementById('workflow').value,
+                manual_process: document.getElementById('manual_process').value,
+                chat_platform: document.getElementById('chat_platform').value,
+                chat_id: document.getElementById('chat_id').value
+            };
+
+            try {
+                const response = await fetch('http://127.0.0.1:8000/api/submit-lead', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                if (response.ok) {
+                    statusMsg.className = "text-center font-bold mt-4 text-emerald-400 animate-fade-in";
+                    statusMsg.innerHTML = '<i class="fa-solid fa-circle-check"></i> Success! Check your email for confirmation.';
+                    statusMsg.classList.remove('hidden');
+                    document.getElementById('pilot-form').reset();
+                    updatePlaceholder();
+                } else {
+                    throw new Error('Failed to submit');
+                }
+            } catch (error) {
+                statusMsg.className = "text-center font-bold mt-4 text-red-400 animate-fade-in";
+                statusMsg.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Backend connection failed!';
+                statusMsg.classList.remove('hidden');
+            } finally {
+                btn.innerHTML = '<span>Submit Pilot Request</span> <i class="fa-solid fa-paper-plane ml-2"></i>';
+                btn.classList.remove('opacity-70', 'cursor-not-allowed');
+            }
+        });
+    </script>
+</body>
+</html>
