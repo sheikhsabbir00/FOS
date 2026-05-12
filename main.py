@@ -53,6 +53,7 @@ def send_email(to_email: str, subject: str, html_content: str):
         return False
 
 def notify_admin_of_new_lead(lead: LeadRequest):
+    """অ্যাডমিন নোটিফিকেশন - ক্লিনার টেমপ্লেট ফর CEO ফারসিন"""
     subject = f"🚨 NEW LEAD: {lead.company} | Workflow: {lead.workflow}"
     
     html_content = f"""
