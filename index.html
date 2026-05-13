@@ -215,17 +215,25 @@
                             </div>
                         </div>
             
-<!-- Mobile Website Preview -->
-<div class="flex justify-center py-4 bg-dark">
-    <div class="w-44 h-[320px] bg-black rounded-[2rem] border-4 border-slate-700 overflow-hidden shadow-2xl hover:border-cyan-400 transition duration-300">
-        
-        <!-- Phone Notch -->
-        <div class="w-20 h-4 bg-slate-800 rounded-full mx-auto mt-2 mb-2"></div>
+<!-- Website Preview -->
+<div class="overflow-hidden rounded-lg border border-slate-800 bg-dark hover:border-cyan-400 transition duration-300">
+    
+    <!-- Browser Bar -->
+    <div class="flex items-center gap-2 px-3 py-2 border-b border-slate-800 bg-slate-900">
+        <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
+        <div class="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
+        <div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
 
-        <!-- Mobile Preview -->
+        <div class="text-[10px] text-slate-500 ml-2 truncate">
+            vaos-umber.vercel.app
+        </div>
+    </div>
+
+    <!-- Preview -->
+    <div class="h-32 overflow-hidden">
         <iframe
             src="https://vaos-umber.vercel.app/"
-            class="w-full h-full scale-[1.05] origin-top"
+            class="w-full h-[500px] scale-[0.55] origin-top-left pointer-events-none"
         ></iframe>
     </div>
 </div>
