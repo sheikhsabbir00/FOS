@@ -1,12 +1,11 @@
-from fastapi import FastAPI, BackgroundTasks
+import os
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from fastapi import FastAPI
-
 
 app = FastAPI(title="Farsin OS Marketing Backend V2.1")
 
@@ -119,13 +118,19 @@ def send_client_auto_reply(lead: LeadRequest):
 # --- API ENDPOINTS ---
 @app.get("/", response_class=HTMLResponse)
 async def serve_home():
-    with open("index.html", "r", encoding="utf-8") as file:
+    # Vercel এর জন্য ডাইনামিক ফাইল পাথ সেট করা হলো
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(base_dir, "index.html")
+    
+    with open(file_path, "r", encoding="utf-8") as file:
         return file.read()
 
 @app.post("/api/submit-lead")
-async def submit_lead(lead: LeadRequest, background_tasks: BackgroundTasks):
-    # Admin Alert
-    background_tasks.add_task(notify_admin_of_new_lead, lead)
-    # Client Auto-Reply
-    background_tasks.add_task(send_client_auto_reply, lead)
+async def submit_lead(lead: LeadRequest):
+    # Admin Alert - পরিবর্তন: BackgroundTasks ছাড়া সরাসরি কল করা হচ্ছে
+    notify_admin_of_new_lead(lead)
+    
+    # Client Auto-Reply - পরিবর্তন: BackgroundTasks ছাড়া সরাসরি কল করা হচ্ছে
+    send_client_auto_reply(lead)
+    
     return {"status": "success", "message": "Lead pipeline triggered successfully."}
