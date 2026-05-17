@@ -26,9 +26,87 @@
         ::-webkit-scrollbar-thumb:hover { background: #475569; }
         .animate-fade-in { animation: fadeIn 0.5s ease-in-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* === YouTube Modal Styles === */
+        .video-modal-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            background: rgba(0, 0, 0, 0.88);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .video-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .video-modal-container {
+            position: relative;
+            width: 90%;
+            max-width: 900px;
+            aspect-ratio: 16 / 9;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 0 60px rgba(6, 182, 212, 0.25);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        .video-modal-overlay.active .video-modal-container {
+            transform: scale(1);
+        }
+        
+        /* Improved highly visible Close Button */
+        .video-modal-close {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            z-index: 10;
+        }
+        .video-modal-close:hover {
+            background: #ef4444; /* Red color on hover to indicate close */
+            border-color: #ef4444;
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body id="top" class="bg-dark text-slate-200 font-sans antialiased">
+
+    <!-- YouTube Video Modal -->
+    <div id="video-modal" class="video-modal-overlay">
+        <div class="video-modal-container">
+            <!-- Close Button inside the video player top-right corner -->
+            <button id="video-modal-close" class="video-modal-close" aria-label="Close video">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <iframe
+                id="video-iframe"
+                src=""
+                title="Farsin OS — How It Works"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                style="width:100%; height:100%;"
+            ></iframe>
+        </div>
+    </div>
 
     <div class="bg-emerald-900/30 border-b border-emerald-500/20 py-2 text-center text-xs md:text-sm font-semibold text-emerald-400 tracking-wide">
         <i class="fa-solid fa-users mr-2"></i> Join 5+ Forward-Thinking Agencies in our Exclusive Pilot Program.
@@ -65,9 +143,12 @@
             <a href="#booking" class="w-full sm:w-auto bg-white text-dark hover:bg-slate-200 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl">
                 Claim Free Pilot <i class="fa-solid fa-arrow-right ml-2"></i>
             </a>
-            <a href="#workflows" class="text-slate-400 hover:text-white font-semibold transition hover:scale-105 transform inline-block">
-                See How It Works <i class="fa-solid fa-play ml-1 text-sm"></i>
-            </a>
+            
+            <!-- Video Trigger Button -->
+            <button id="open-video-btn" class="text-slate-400 hover:text-white font-semibold transition hover:scale-105 transform inline-flex items-center cursor-pointer bg-transparent border-none text-lg">
+                See How It Works <i class="fa-solid fa-play ml-2 text-sm"></i>
+            </button>
+            
         </div>
     </header>
 
@@ -114,7 +195,7 @@
         </div>
     </section>
 
-    "    <section id="workflows" class="max-w-7xl mx-auto px-6 py-20">
+    <section id="workflows" class="max-w-7xl mx-auto px-6 py-20">
         <div class="text-center mb-16">
             <h2 class="text-4xl font-extrabold text-white mb-4">Our 5 Core Workflows</h2>
             <p class="text-slate-400 font-medium">We don't sell apps. We sell time. Here is how our backend engine works.</p>
@@ -184,55 +265,37 @@
                     <div class="flex items-center"><span class="text-emerald-400 mr-2">3.</span> Download clean CSV/Excel</div>
                 </div>
             </div>
+            
             <div class="bg-card p-8 rounded-2xl border border-slate-700 hover:border-cyan-500 transition duration-300 group shadow-lg hover:-translate-y-2">
-    
                 <div class="w-14 h-14 bg-cyan-500/10 text-cyan-400 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-cyan-500 group-hover:text-white transition">
                     <i class="fa-solid fa-globe"></i>
                 </div>
-            
-                <h3 class="text-2xl font-bold text-white mb-3">Virtual  Flow </h3>
-            
+                <h3 class="text-2xl font-bold text-white mb-3">Virtual Flow</h3>
                 <p class="text-slate-400 mb-6 text-sm">
                     Hire trained VA/ GVA within a day.
                 </p>
-            
-                <!-- Preview Box -->
-                <a 
-                    href="https://vaos-umber.vercel.app/" 
-                    target="_blank"
-                    class="block"
-                >
+                <a href="https://vaos-umber.vercel.app/" target="_blank" class="block">
                     <div class="bg-dark rounded-lg overflow-hidden border border-slate-800 hover:border-cyan-400 transition">
-                        
-                        <!-- Mini Browser Top -->
                         <div class="flex items-center gap-2 px-3 py-2 border-b border-slate-800 bg-slate-900">
                             <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
                             <div class="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
                             <div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
-            
                             <div class="text-[10px] text-slate-500 ml-2 truncate">
                                 vaos-umber.vercel.app
                             </div>
                         </div>
-            
                         <div class="overflow-hidden rounded-lg border border-slate-800 bg-dark hover:border-cyan-400 transition duration-300">
-
                             <div class="h-32 overflow-hidden relative">
-                              
-                              <div class="scale-[0.25] origin-top-left">
-                                <iframe
-                                  src="https://vaos-umber.vercel.app/"
-                                  class="w-[1200px] h-[800px] pointer-events-none"
-                                ></iframe>
-                              </div>
-                          
+                                <div class="scale-[0.25] origin-top-left">
+                                    <iframe src="https://vaos-umber.vercel.app/" class="w-[1200px] h-[800px] pointer-events-none"></iframe>
+                                </div>
                             </div>
-                          
-                          </div>
-                        </div> <!-- closes outer preview box -->
-                    </a> <!-- closes link -->
-                </div> <!-- closes card -->
-          </section>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
 
     <section class="max-w-4xl mx-auto px-6 py-10">
         <div class="text-center">
@@ -448,7 +511,6 @@
             };
 
             try {
-                // FIXED: Changed absolute localhost url to relative serverless url path
                 const response = await fetch('/api/submit-lead', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -470,6 +532,42 @@
             } finally {
                 btn.innerHTML = '<span>Submit Pilot Request</span> <i class="fa-solid fa-paper-plane ml-2"></i>';
                 btn.classList.remove('opacity-70', 'cursor-not-allowed');
+            }
+        });
+
+        // === YouTube Video Modal Logic ===
+        const videoModal = document.getElementById('video-modal');
+        const videoIframe = document.getElementById('video-iframe');
+        const openVideoBtn = document.getElementById('open-video-btn');
+        const closeVideoBtn = document.getElementById('video-modal-close');
+        const YOUTUBE_EMBED_URL = 'https://www.youtube.com/embed/W7QhlRWum_Q?autoplay=1&rel=0';
+
+        function openVideoModal() {
+            videoIframe.src = YOUTUBE_EMBED_URL;
+            videoModal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeVideoModal() {
+            videoModal.classList.remove('active');
+            videoIframe.src = ''; // Stop the video immediately
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+
+        openVideoBtn.addEventListener('click', openVideoModal);
+        closeVideoBtn.addEventListener('click', closeVideoModal);
+
+        // Close on overlay click (outside the video box)
+        videoModal.addEventListener('click', function(e) {
+            if (e.target === videoModal) {
+                closeVideoModal();
+            }
+        });
+
+        // Close on Escape key press
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && videoModal.classList.contains('active')) {
+                closeVideoModal();
             }
         });
     </script>
