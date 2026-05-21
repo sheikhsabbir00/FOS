@@ -32,7 +32,7 @@
             position: fixed;
             inset: 0;
             z-index: 100;
-            background: rgba(0, 0, 0, 0.88);
+            background: rgba(0, 0, 0, 0.90);
             backdrop-filter: blur(10px);
             display: flex;
             align-items: center;
@@ -45,13 +45,20 @@
             opacity: 1;
             visibility: visible;
         }
-        .video-modal-container {
+        
+        /* NEW: Wrapper prevents the close button from being cut off */
+        .video-modal-wrapper {
             position: relative;
             width: 90%;
             max-width: 900px;
+        }
+
+        .video-modal-container {
+            position: relative;
+            width: 100%;
             aspect-ratio: 16 / 9;
             border-radius: 16px;
-            overflow: hidden;
+            overflow: hidden; /* Keeps video corners rounded */
             box-shadow: 0 0 60px rgba(6, 182, 212, 0.25);
             border: 1px solid rgba(6, 182, 212, 0.3);
             transform: scale(0.9);
@@ -61,18 +68,18 @@
             transform: scale(1);
         }
         
-        /* Improved highly visible Close Button */
+        /* Close Button positioned above the video */
         .video-modal-close {
             position: absolute;
-            top: 12px;
-            right: 12px;
-            width: 40px;
-            height: 40px;
-            background: rgba(0, 0, 0, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 8px;
+            top: -50px; /* Floats right above the video */
+            right: 0;
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
             color: #fff;
-            font-size: 20px;
+            font-size: 22px;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -81,9 +88,9 @@
             z-index: 10;
         }
         .video-modal-close:hover {
-            background: #ef4444; /* Red color on hover to indicate close */
+            background: #ef4444; /* Red hover effect */
             border-color: #ef4444;
-            transform: scale(1.1);
+            transform: rotate(90deg) scale(1.1);
         }
     </style>
 </head>
@@ -91,20 +98,24 @@
 
     <!-- YouTube Video Modal -->
     <div id="video-modal" class="video-modal-overlay">
-        <div class="video-modal-container">
-            <!-- Close Button inside the video player top-right corner -->
+        <!-- Added Wrapper -->
+        <div class="video-modal-wrapper">
+            <!-- Close Button above the video -->
             <button id="video-modal-close" class="video-modal-close" aria-label="Close video">
                 <i class="fa-solid fa-xmark"></i>
             </button>
-            <iframe
-                id="video-iframe"
-                src=""
-                title="Farsin OS — How It Works"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-                style="width:100%; height:100%;"
-            ></iframe>
+            <!-- Video Container -->
+            <div class="video-modal-container">
+                <iframe
+                    id="video-iframe"
+                    src=""
+                    title="Farsin OS — How It Works"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                    style="width:100%; height:100%;"
+                ></iframe>
+            </div>
         </div>
     </div>
 
@@ -540,7 +551,7 @@
         const videoIframe = document.getElementById('video-iframe');
         const openVideoBtn = document.getElementById('open-video-btn');
         const closeVideoBtn = document.getElementById('video-modal-close');
-        const YOUTUBE_EMBED_URL = 'https://www.youtube.com/embed/W7QhlRWum_Q?autoplay=1&rel=0';
+        const YOUTUBE_EMBED_URL = 'https://www.youtube.com/embed/lmMar1-cT9U?autoplay=1&rel=0';
 
         function openVideoModal() {
             videoIframe.src = YOUTUBE_EMBED_URL;
